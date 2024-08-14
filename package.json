@@ -1,0 +1,39 @@
+{
+  "name": "cf-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel-node": "babel-node --presets=@babel/preset-env",
+    "dev": "nodemon --exec npm run babel-node -- src/index.js",
+    "start": "babel-node src/index.js",
+    "build": "babel src --out-dir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jose G. Segovia R. - jose.segovia.r@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "4.9.3",
+    "@graphql-tools/load-files": "7.0.0",
+    "@graphql-tools/merge": "9.0.0",
+    "@graphql-tools/schema": "10.0.0",
+    "cors": "2.8.5",
+    "crypto": "1.0.1",
+    "dotenv": "16.3.1",
+    "express": "4.19.2",
+    "graphql": "16.8.1",
+    "jsonwebtoken": "9.0.2",
+    "moment": "2.29.4",
+    "nodemailer": "6.9.6",
+    "pg": "8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "6.33.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.22.20",
+    "nodemon": "3.0.1"
+  }
+}

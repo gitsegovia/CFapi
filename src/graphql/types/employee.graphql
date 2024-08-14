@@ -1,0 +1,56 @@
+type Employee {
+  id: UUID!
+  firstName: String!
+  lastName: String!
+  typeDni: String!
+  idnDni: String!
+  gender: String!
+  birthDate: Datatime!
+  codeCountryPhone: String!
+  phone: String!
+  address: String
+  position: String!
+  coordinator: Boolean!
+  role: String!
+  photo: String!
+  dniImg: String!
+  signature: String
+  nameMessage: String
+  numberEmployee: Int!
+  contractAccepted: Boolean!
+  active: Boolean!
+  User: User!
+}
+
+type EmployeeResults {
+  infoPage: InfoPage
+  results: [Employee!]
+}
+
+type Query {
+  getAllEmployee(search: SearchEmployeeInp!): EmployeeResults!
+  getAllIdEmployee: [UUID!]
+  getDataEmployeeById(id: UUID!): Employee!
+}
+
+type Mutation {
+  createEmployee(input: CreateEmployeeInp!): Boolean!
+  deleteEmployeeById(id: UUID!): Boolean!
+}
+
+input SearchEmployeeInp {
+  options: OptionsSearch
+}
+
+input CreateEmployeeInp {
+  id: UUID
+  firstName: String!
+  lastName: String!
+  idnDni: String!
+  gender: String!
+  phone: String!
+  position: String!
+  role: String!
+  password: String!
+  email: String!
+}

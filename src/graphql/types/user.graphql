@@ -1,0 +1,35 @@
+type User {
+  id: UUID!
+  email: String!
+  codeCountryPhone: String!
+  phone: String!
+  status: String!
+  nameUser: String!
+  Employee: Employee
+}
+
+type UserResults {
+  infoPage: InfoPage
+  results: [User!]
+}
+
+type Query {
+  getUsersAll(search: SearchUserInput): UserResults
+  dataEmployeeByUserId(userId: UUID!): User!
+}
+
+type Mutation {
+  me(token: String!, onTokenExpiration: String): AuthPayLoad!
+  loginEmployee(input: LoginInput!): AuthPayLoad!
+  createAdmin: Boolean!
+}
+
+input SearchUserInput {
+  options: OptionsSearch
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+  systemConnect: SystemConnect!
+}
